@@ -1,38 +1,639 @@
-.App {
+.c-font {
+  font-family: var(--contrast-font-family);
+}
+
+.c-color {
+  color: var(--contrast-color);
+  letter-spacing: .03em;
+}
+
+.m-color {
+  color: var(--text-color);
+}
+
+.bigger-font {
+  font-size: var(--bigger-font-size);
+}
+
+.flex {
+  display: flex;
+  flex-direction: row;
+}
+
+.f-wrap {
+  flex-wrap: wrap;
+}
+
+li {
+  list-style-type: none;
+}
+
+.header-section {
+  left: 0;
+  z-index: 2;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  position: sticky;
+  top: 0;
+  transition: var(--transition-time-btn);
+}
+
+.header-btns {
+  padding-block: 2em;
+  display: flex;
+  flex-direction: row;
+  gap: 1em;
+  align-items: flex-end;
+  padding-inline: 2.5em;
+  font-size: var(--small-font-size);
+}
+
+.header-btns>* {
+  cursor: pointer;
+  user-select: none;
+  transition: var(--transition-time-btn);
+}
+
+.header-btns>*:hover {
+  color: var(--title-color);
+  transition: var(--transition-time-btn);
+}
+
+.mobile-btn {
+  width: 100%;
+  z-index: 0;
+  display: none;
+}
+
+.mobile-btn-wrapper {
+  display: none;
+  z-index: 3;
+  position: sticky;
+  top: 0;
+}
+
+@media only screen and (max-width: 720px) {
+  .mobile-btn-wrapper {
+    display: block;
+  }
+
+  .mobile-btn {
+    z-index: 3;
+    display: block;
+    position: absolute;
+    right: 0;
+    top: 30px;
+
+    width: 30px;
+    height: 2px;
+    margin: 0px auto;
+    background-color: var(--title-color);
+    transition: var(--transition-time-btn);
+  }
+
+  .mobile-btn::before {
+    content: "";
+    display: block;
+    position: relative;
+    right: 0px;
+    top: -10px;
+
+    width: 30px;
+    height: 2px;
+    margin: 0px auto;
+    background-color: var(--title-color);
+    transition: var(--transition-time-btn);
+  }
+
+  .mobile-btn::after {
+    content: "";
+    display: block;
+    position: relative;
+    right: 0px;
+    top: 10px;
+
+    width: 30px;
+    height: 2px;
+    margin: 0px auto;
+    background-color: var(--title-color);
+    transition: var(--transition-time-btn);
+  }
+
+  .mobile-btn.open {
+    transition: var(--transition-time-btn);
+    rotate: 45deg;
+  }
+
+  .mobile-btn.open::after {
+    transition: var(--transition-time-btn);
+    rotate: -90deg;
+    translate: 0 -12px;
+  }
+
+  .mobile-btn.open::before {
+    transition: var(--transition-time-btn);
+    translate: 0 10px;
+  }
+
+  .header-section {
+    position: fixed;
+    left: -100em;
+    background-color: var(--bg-color-contrast);
+  }
+
+  .header-section.open {
+    transition: var(--transition-time-btn);
+    left: 0;
+  }
+
+  .header-btns {
+    width: 100%;
+    flex-direction: column;
+    align-items: center;
+    gap: 2em;
+    font-size: var(--normal-font-size);
+  }
+}
+
+.content {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.content>section {
+  scroll-snap-align: start;
+}
+
+.text-paragraph {
+  max-width: var(--p-width);
+}
+
+.main-text-section, .comp-section {
+  width: 80vw;
+  max-width: 1000px;
+  min-height: 100vh;
+  padding-bottom: 10em;
+  display: flex;
+  flex-direction: column;
+  align-items: left;
+  justify-content: center;
+  text-align: left;
+  gap: .5em;
+  padding-inline: 3em;
+}
+
+.comp-section {
+  padding-top: 5em;
+}
+
+.comp-section>*:last-child {
+  margin-bottom: 3em;
+}
+
+.main-title {
+  color: var(--title-color);
+  font-weight: 600;
+  font-size: var(--big-font-size);
+  gap: .2em;
+}
+
+.main-undertitle {
+  color: var(--text-color);
+  font-weight: 500;
+  font-size: var(--big-font-size);
+  gap: .2em;
+}
+
+.top-title {
+  margin: 10px 0px 40px;
+  border-bottom: 1px solid var(--text-color);
+  font-size: 20px;
+  height: 17px;
+}
+
+.top-title span {
+  font-weight: 600;
+  font-size: var(--bigger-font-size);
+  color: var(--title-color);
+  background: var(--bg-color);
+  padding-right: 10px;
+}
+
+.block-60-20 {
+  display: grid;
+  gap: 2em;
+}
+
+@media only screen and (min-width: 720px) {
+  .block-60-20 {
+    grid-template-columns: 3fr 2fr;
+    gap: 50px;
+  }
+}
+
+.hov-second > :last-child {
+  transition: var(--transition-time-btn);
+}
+
+.hov-second:hover > :last-child {
+  transition: var(--transition-time-btn);
+  rotate: 5deg;
+  scale: 1.05;
+}
+
+.list-3-3 {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(140px, 200px));
+  gap: 10px 10px;
+  padding: 0px;
+  margin: 20px 0px 0px;
+  overflow: hidden;
+}
+
+.list-3-3 > * {
+  cursor: pointer;
+}
+
+.list-3-3 > *::before {
+  display: inline-block;
+  content: "◇";
+  margin-right: 5px;
+  color: var(--contrast-color);
+  font-size: var(--normal-font-size);
+  line-height: 12px;
+  transition: var(--transition-time-btn);
+}
+
+.list-3-3>*:hover::before {
+  transition: var(--transition-time-btn);
+  transform: rotate(45deg);
+}
+
+.big-img {
+  width: 17em;
+}
+
+.feather, .link-color {
+  color: var(--title-color);
+  transition: var(--transition-time-btn);
+}
+
+.feather {
+  width: 25px;
+  height: 25px;
+}
+
+.feather:hover, .link-color:hover {
+  color: var(--contrast-color);
+}
+
+.social-section, .email-section {
+  position: fixed;
+  bottom: 0;
+
+  display: flex;
+  flex-direction: column;
+  gap: 1.5em;
+}
+
+.social-section {
+  left: 3em;
+}
+
+.social-section>li {
+  transition: var(--transition-time-btn);
+}
+
+.social-section>li:hover {
+  transition: var(--transition-time-btn);
+  translate: 0 -.2em;
+  scale: 1.1;
+}
+
+.email-section {
+  right: 3em;
+  font-family: var(--contrast-font-family);
+  letter-spacing: 0.1em;
+}
+
+.deg-90-text {
+  writing-mode: vertical-rl;
+}
+
+.corner-section > * {
+  /* animation-delay: 1s; */
+  animation-name: cornerSectionElementsGrow;
+  animation-duration: 1.4s;
+  animation-timing-function: ease-in-out;
+}
+
+@keyframes cornerSectionElementsGrow {
+  0% {
+    scale: 0;
+  }
+  50% {
+    scale: 0;
+  }
+  100% {
+    scale: 1;
+  }
+}
+
+.corner-section::after {
+  content: "";
+  display: block;
+  width: 1px;
+  height: 90px;
+  margin: 0px auto;
+  background-color: var(--title-color);
+  animation-name: cornerSectionGrow;
+  animation-duration: .7s;
+  animation-timing-function: ease-in-out;
+}
+
+@keyframes cornerSectionGrow {
+  from {
+    height: 0;
+  }
+  to {
+    height: 90px;
+  }
+}
+
+@media only screen and (max-width: 720px) {
+  .corner-section {
+    display: none;
+  }
+}
+
+.experience-box {
+  display: flex;
+  flex-direction: column;
+}
+
+.experience-box > *, .experience-description>*, .experience-period>* {
+  margin: 0;
+}
+
+.experience-box > h2 {
+  color: var(--title-color);
+  margin-bottom: .5em;
+}
+
+.experience-period {
+  margin-bottom: 1em;
+}
+
+.experience-description>ul {
+  padding: 0;
+}
+
+.experience-description>ul > * {
+  position: relative;
+  padding-left: 25px;
+  margin-bottom: .5em;
+}
+
+.experience-description>ul > *::before {
+  display: inline-block;
+  position: absolute;
+  top: 5px;
+  left: 0px;
+  content: "◇";
+  margin-right: 5px;
+  color: var(--contrast-color);
+  font-size: var(--normal-font-size);
+  line-height: 12px;
+  transition: var(--transition-time-btn);
+}
+
+.project-section {
+  display: flex;
+  flex-direction: column;
+  gap: 2em;
+}
+
+.project-wrapper {
+  position: relative;
+  background-color: var(--bg-color-contrast);
+  padding: 1em 3em;
+  border-radius: .5rem;
+  box-shadow: 0 10px 30px -15px var(--bg-contrast-shadow);
+  transition: var(--transition-time-btn);
+  overflow: hidden;
+}
+
+.project-wrapper:hover {
+  transition: var(--transition-time-btn);
+  translate: 0 -.3em;
+}
+
+.project-wrapper>*>*>h2 {
+  color: var(--title-color);
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 1em;
+}
+
+.project-wrapper>*>* {
+  margin-inline: 0;
+  margin-block: 1em;
+}
+
+.project-wrapper>*:first-child {
+  max-width: 350px;
+}
+
+.post-tags {
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: .3em;
+}
+
+.post-tags > * {
+  cursor: pointer;
+  margin-right: 1em;
+}
+
+.post-tags > *:hover {
+  color: var(--title-color);
+}
+
+.post-tags > *::before {
+  display: inline-block;
+  content: "◇";
+  margin-right: 5px;
+  color: var(--contrast-color);
+  font-size: var(--normal-font-size);
+  line-height: 12px;
+  transition: var(--transition-time-btn);
+}
+
+.project-image {
+  z-index: 2;
+  width: 450px;
+  border-radius: .5rem;
+  position: absolute;
+  top: 0;
+  right: -5em;
+  rotate: -30deg;
+  filter: grayscale(100%) contrast(1) brightness(70%);
+  transition: var(--transition-time-btn);
+}
+
+.project-wrapper:hover .project-image {
+  rotate: -10deg;
+  transition: var(--transition-time-btn);
+  filter: none;
+}
+
+@media screen and (max-width: 980px) {
+  .project-image {
+    display: none;
+  }
+
+  .project-wrapper>*:first-child {
+    max-width: 100%;
+  }
+}
+
+/* TIMELINE */
+.timeline {
+  position: relative;
+  width: 100%;
+}
+
+.timeline::after {
+  content: '';
+  position: absolute;
+  width: 6px;
+  background-color: var(--text-color);
+  top: 0;
+  bottom: 0;
+  left: 50%;
+  margin-left: -3px;
+  border-radius: .5rem;
+}
+
+/* Container around content */
+.timeline-container {
+  padding-block: 10px;
+  position: relative;
+  background-color: inherit;
+  width: 50%;
+}
+
+/* The circles on the timeline */
+.timeline-container::after {
+  content: '';
+  position: absolute;
+  width: 25px;
+  height: 25px;
+  right: -17px;
+  background-color: var(--bg-color-contrast);
+  border: 4px solid var(--contrast-color);
+  top: 15px;
+  border-radius: 50%;
+  z-index: 1;
+}
+
+/* Place the container to the left */
+.t-left {
+  left: 0;
+}
+
+/* Place the container to the right */
+.t-right {
+  left: 50%;
+}
+
+/* Add arrows to the left container (pointing right) */
+.t-left::before {
+  content: " ";
+  height: 0;
+  position: absolute;
+  top: 22px;
+  width: 0;
+  z-index: 1;
+  right: 20px;
+  border: medium solid var(--bg-color-contrast);
+  border-width: 10px 0 10px 10px;
+  border-color: transparent transparent transparent var(--contrast-color);
+  box-shadow: 0 10px 30px -15px var(--bg-contrast-shadow);
+}
+
+/* Add arrows to the right container (pointing left) */
+.t-right::before {
+  content: " ";
+  height: 0;
+  position: absolute;
+  top: 22px;
+  width: 0;
+  z-index: 1;
+  left: 20px;
+  border: medium solid var(--bg-color-contrast);
+  border-width: 10px 10px 10px 0;
+  border-color: transparent var(--contrast-color) transparent;
+  box-shadow: 0 10px 30px -15px var(--bg-contrast-shadow);
+}
+
+/* Fix the circle for containers on the right side */
+.t-right::after {
+  left: -16px;
+}
+
+/* The actual content */
+.timeline-content {
+  box-shadow: 0 10px 30px -15px var(--bg-contrast-shadow);
+  margin-inline: 1.5em;
+  padding: 20px 30px;
+  background-color: var(--bg-color-contrast);
+  position: relative;
+  border-radius: 4px;
+}
+
+.timeline-years {
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
+@media screen and (max-width: 720px) {
+  .timeline-years {
+    text-align: left;
   }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
-
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+  /* Place the timelime to the left */
+  .timeline::after {
+    left: 31px;
   }
-  to {
-    transform: rotate(360deg);
+  
+  /* Full-width containers */
+  .timeline-container {
+    width: 100%;
+    padding-left: 33px;
+    padding-right: 25px;
+  }
+  
+  /* Make sure that all arrows are pointing leftwards */
+  .timeline-container::before {
+    left: 47px;
+    border: medium solid var(--contrast-color);
+    border-width: 10px 10px 10px 0;
+    border-color: transparent var(--contrast-color) transparent transparent;
+  }
+
+  /* Make sure all circles are at the same spot */
+  .t-left::after, .t-right::after {
+    left: 15px;
+  }
+  
+  /* Make all right containers behave like the left ones */
+  .t-right {
+    left: 0%;
   }
 }

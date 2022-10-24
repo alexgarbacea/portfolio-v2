@@ -1,13 +1,67 @@
+@import url('https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;500;600;700;800;900&family=Share+Tech+Mono&display=swap');
+
+:root {
+  scroll-behavior: smooth;
+  
+  --bg-color: #0a192f;
+  --bg-color-contrast: #112240;
+  --bg-contrast-shadow: rgba(2,12,27,0.8);
+  --title-color: #ccd6f6;
+  --text-color: #8892b0;
+  --contrast-color: #64ffda;
+  --contrast-tint: rgba(100,255,218,0.1);
+
+  --main-font-family: 'Rubik', sans-serif;
+  --contrast-font-family: 'Share Tech Mono', monospace;
+  --big-font-size: 4em;
+  --bigger-font-size: 1.4em;
+  --normal-font-size: 1.2em;
+  --small-font-size: .9em;
+  --p-width: 550px;
+
+  --transition-time-btn: all .1s ease-in-out;
+}
+
+::-moz-selection { /* Code for Firefox */
+  background-color: var(--text-color);
+  color: var(--title-color);
+}
+
+::selection {
+  background-color: var(--text-color);
+  color: var(--title-color);
+}
+
+html {
+  scroll-snap-type: y mandatory;
+  margin: 0;
+  padding: 0;
+}
+
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
+  font-family: var(--main-font-family);
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  font-size: var(--normal-font-size);
 }
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
+}
+
+a {
+  color: inherit;
+  text-decoration: inherit;
+}
+
+@media only screen and (max-width: 720px) {
+  :root {
+    --big-font-size: 2em;
+    --bigger-font-size: 1.2em;
+    --normal-font-size: 1em;
+  }
 }

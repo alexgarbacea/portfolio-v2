@@ -12,7 +12,7 @@ const Projects = () => {
                     return (
                     <div key={`${val.title} - ${i}`} className='project-wrapper'>
                         <div>
-                            <a href={val.links[0].url} target='_blank' >
+                            <a href={val.links[0].url} rel="noreferrer" target='_blank' >
                                 <h2>{val.title}</h2>
                             </a>
                             <p>{val.description}</p>
@@ -27,7 +27,7 @@ const Projects = () => {
                                 {
                                     val.links.map((lVal, lI) => {
                                         return (
-                                            <a key={lI} href={lVal.url} target='_blank' >
+                                            <a key={lI} href={lVal.url} rel="noreferrer" target='_blank' >
                                                 <Icon name={lVal.title} />
                                             </a>
                                         ) 
@@ -37,7 +37,7 @@ const Projects = () => {
                         </div>
                         {
                             val.picture && 
-                            <a href={val.links[0].url} target='_blank' >
+                            <a href={val.links[0].url} rel="noreferrer" target='_blank' >
                                 <img className='project-image' src={val.picture} alt={val.title} />
                             </a>
                         }
@@ -46,10 +46,10 @@ const Projects = () => {
                     )
                 })
             }
-            <div>For more projects please visit <a href='https://github.com/alexgarbacea?tab=repositories' target='_blank'
+            <div>For more projects please visit <a rel="noreferrer" href='https://github.com/alexgarbacea?tab=repositories' target='_blank'
             className='c-color c-font'>github.com/alexgarbacea</a></div>
 
-            <div>Check out my games on <a href='https://play.google.com/store/apps/dev?id=5777513003852495025' target='_blank'
+            <div>Check out my games on <a rel="noreferrer" href='https://play.google.com/store/apps/dev?id=5777513003852495025' target='_blank'
             className='c-color c-font'>GooglePlay</a></div>
         </div>
     </section>

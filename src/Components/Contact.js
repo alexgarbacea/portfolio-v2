@@ -10,7 +10,7 @@ const Contact = () => {
         <p>My Email: <a href={`mailto:${email}`}><span className='c-color'>{email}</span></a></p>
         {
             social.map((val, i) => {
-                return (<p key={i}>My {val.name}: <a href={val.url} target='_blank'>
+                return (<p key={i}>My {val.name}: <a href={val.url} rel="noreferrer" target='_blank'>
                     <span className='c-color'>here</span></a>
                 </p>)
             })

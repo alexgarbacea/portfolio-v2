@@ -84,7 +84,7 @@ li {
     z-index: 3;
     display: block;
     position: absolute;
-    right: 15px;
+    right: 30px;
     top: 30px;
 
     width: 30px;
@@ -178,7 +178,7 @@ li {
   width: 80%;
   max-width: 1000px;
   min-height: 100vh;
-  padding-bottom: 10em;
+  padding-bottom: 15em;
   display: flex;
   flex-direction: column;
   align-items: left;

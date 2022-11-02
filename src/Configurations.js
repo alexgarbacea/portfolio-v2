@@ -1,6 +1,7 @@
 import invGenerator from './Images/invoiceGenerator.png';
 import passGenerator from './Images/passwordGenerator.png';
 import planeGame from './Images/planeGame.png';
+import seatPicker from './Images/seatPicker.png';
 
 export const firstName = 'Alexandru'
 export const lastName  = 'Gârbacea'
@@ -133,6 +134,22 @@ export const myProjects = [
       }
     ],
     picture: invGenerator
+  },
+  {
+    title: 'Cinema booking',
+    description: `The movie starts soon. Don't forget to book your seat!`,
+    tags: ['JavaScript', 'React', 'CSS'],
+    links: [
+      {
+        title: 'Extern', 
+        url: 'https://alexgarbacea.github.io/seat-picker-cinema/'
+      },
+      {
+        title: 'Github', 
+        url: 'https://github.com/alexgarbacea/seat-picker-cinema'
+      },
+    ],
+    picture: seatPicker
   },
   {
     title: 'Password Generator',

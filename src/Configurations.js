@@ -56,13 +56,13 @@ export const workExperience = [
     description: (
       <>
       <li>
-      Write modern, performant and maintainable code for diverse clients.
+      Was a key part of every team I took part in, working on software development, but also on deployment strategies of the applications.
       </li>
       <li>
       Work in an agile enviroment with teams of engineers, designers, producers, and clients on a daily basis.
       </li>
       <li>
-      Work with a variety of different languages, platforms, and frameworks such as JavaScript, TypeScript, React, Firebase, C++, Google Test Library.
+      Work with a variety of different languages, platforms, and frameworks such as React, Firebase, JavaScript, TypeScript, NodeJs (for REST APIs) and other technologies when completing extra duties.
       </li>
       </>
     )
@@ -81,8 +81,7 @@ export const workExperience = [
       reported test results to supervisors.
       </li>
       <li>
-      Pro-actively participated in weekly team meetings and conducted reports in the
-      progress of the projects.
+      Developed and tested applications using the Qt framework and took part of daily SCRUM meetings.
       </li>
       <li>
       Collaborated with colleagues on the creation of a new management platform in the sector of Energy.
@@ -103,7 +102,7 @@ export const workExperience = [
         Devloped applications for multiple clients in various fields.
       </li>
       <li>
-        Collaborated with a small team of developers for bigger projects.
+        Collaborated with a small team of developers for bigger projects within an Agile enviroment.
       </li>
       <li>
         Developed and maintained code for client websites primarily using HTML, CSS, JavaScript, and jQuery.
